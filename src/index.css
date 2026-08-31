@@ -26,8 +26,40 @@ body,
   overflow: hidden;
 }
 
-body {
-  cursor: crosshair;
+* {
+  cursor: none !important;
+}
+
+.sight-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  pointer-events: none;
+  opacity: 0;
+  color: var(--color-signal);
+  filter: drop-shadow(0 0 4px rgb(198 242 90 / 0.45));
+  will-change: transform;
+}
+
+.sight-cursor svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sight-cursor circle,
+.sight-cursor path {
+  stroke: currentColor;
+  stroke-width: 2.6;
+}
+
+.sight-cursor .sight-dot {
+  fill: currentColor;
+  stroke: none;
 }
 
 .scanlines {
@@ -100,4 +132,24 @@ body {
   opacity: 0.14;
   transform: perspective(500px) rotateX(58deg) scale(1.5);
   transform-origin: center bottom;
+}
+
+.js-scene,
+.js-in {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-floor {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-scene {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.js-scene .pointer-events-auto {
+  pointer-events: auto;
 }

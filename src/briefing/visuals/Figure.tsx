@@ -11,13 +11,6 @@ export function Figure({ className }: FigureProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
     >
-      <g className="js-grid-faint" opacity="0">
-        <path d="M80 80 H720" stroke="#3d4a40" strokeWidth="0.6" />
-        <path d="M80 920 H720" stroke="#3d4a40" strokeWidth="0.6" />
-        <path d="M80 80 V920" stroke="#3d4a40" strokeWidth="0.6" />
-        <path d="M720 80 V920" stroke="#3d4a40" strokeWidth="0.6" />
-      </g>
-
       <path
         id="line-entry"
         className="js-draw"
@@ -155,25 +148,7 @@ export function Figure({ className }: FigureProps) {
         opacity="0"
       />
 
-      <path
-        id="line-fork-l"
-        className="js-draw"
-        d="M400 860 C320 900 220 920 120 940"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-
-      <path
-        id="line-fork-r"
-        className="js-draw"
-        d="M400 860 C480 900 580 920 680 940"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-
-      <g className="js-label" id="label-age" opacity="0">
+      <g className="js-fig-label" id="label-age" opacity="0">
         <text x="470" y="186" fill="#c6f25a" fontFamily="Share Tech Mono, monospace" fontSize="15" letterSpacing="4">
           AGE
         </text>
@@ -182,7 +157,7 @@ export function Figure({ className }: FigureProps) {
         </text>
       </g>
 
-      <g className="js-label" id="label-height" opacity="0">
+      <g className="js-fig-label" id="label-height" opacity="0">
         <text x="40" y="500" fill="#c6f25a" fontFamily="Share Tech Mono, monospace" fontSize="15" letterSpacing="4">
           HEIGHT
         </text>
@@ -191,7 +166,7 @@ export function Figure({ className }: FigureProps) {
         </text>
       </g>
 
-      <g className="js-label" id="label-bmi" opacity="0">
+      <g className="js-fig-label" id="label-bmi" opacity="0">
         <text x="500" y="360" fill="#c6f25a" fontFamily="Share Tech Mono, monospace" fontSize="15" letterSpacing="4">
           BMI
         </text>
@@ -203,18 +178,12 @@ export function Figure({ className }: FigureProps) {
         </text>
       </g>
 
-      <g className="js-label" id="label-edu" opacity="0">
+      <g className="js-fig-label" id="label-edu" opacity="0">
         <text x="500" y="250" fill="#c6f25a" fontFamily="Share Tech Mono, monospace" fontSize="15" letterSpacing="4">
           EDU
         </text>
         <text x="500" y="280" fill="#e8f0e4" fontFamily="Noto Sans TC, sans-serif" fontSize="22">
           高中以上
-        </text>
-      </g>
-
-      <g className="js-label" id="label-ok" opacity="0">
-        <text x="400" y="96" textAnchor="middle" fill="#c6f25a" fontFamily="Share Tech Mono, monospace" fontSize="22" letterSpacing="6">
-          ✓ QUALIFIED
         </text>
       </g>
     </svg>
