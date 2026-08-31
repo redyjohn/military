@@ -11,7 +11,7 @@ export function SceneShell({
 }) {
   return (
     <section
-      className={`js-scene js-${id} absolute inset-0 flex items-center justify-center px-6 sm:px-12 ${className}`}
+      className={`js-scene js-${id} absolute inset-0 flex items-center justify-center px-6 pr-14 pt-24 pb-36 sm:px-16 sm:pr-24 sm:pt-28 sm:pb-48 ${className}`}
       data-scene={id}
     >
       {children}
