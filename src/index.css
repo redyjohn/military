@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Noto Sans TC", sans-serif;
+  --font-hud: "Share Tech Mono", ui-monospace, monospace;
+  --color-ink: #07100d;
+  --color-ink-2: #121a16;
+  --color-line: #8a9a8c;
+  --color-line-dim: #3d4a40;
+  --color-pass: #5c7a4a;
+  --color-signal: #c6f25a;
+  --color-warn: #e8b45a;
+  --color-alert: #e85a4a;
+  --color-paper: #e8f0e4;
+  --color-muted: #9aa9a0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  overflow: hidden;
+}
+
+body {
+  cursor: crosshair;
+}
+
+.scanlines {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(198 242 90 / 0.035) 0px,
+    rgb(198 242 90 / 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.coord-grid {
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(138 154 140 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(138 154 140 / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hud-corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: var(--color-signal);
+  opacity: 0.85;
+}
+
+.hud-tl {
+  top: 18px;
+  left: 18px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.hud-tr {
+  top: 18px;
+  right: 18px;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+.hud-bl {
+  bottom: 18px;
+  left: 18px;
+  border-bottom: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.hud-br {
+  bottom: 18px;
+  right: 18px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+.label-hud {
+  font-family: var(--font-hud);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.floor-grid {
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--color-line-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line-dim) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.14;
+  transform: perspective(500px) rotateX(58deg) scale(1.5);
+  transform-origin: center bottom;
+}
